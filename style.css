@@ -1,0 +1,81 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0 auto;
+  padding: 0;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
+}
+textarea {
+  width: 50%;
+  height: 200px;
+  margin-bottom: 20px;
+  padding: 10px;
+  box-sizing: border-box;
+}
+button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+button:hover {
+  background-color: #0056b3;
+}
+
+#copyButton.clicked {
+  animation: pulse 0.5s;
+}
+
+#copiedText {
+  opacity: 0;
+  margin-left: 5px;
+  transition: all 0.2s ease-in-out;
+}
+
+.copyButton-container {
+  position: relative;
+
+  span {
+    position: absolute;
+    line-height: 14px;
+    background-color: rgba(119, 119, 119, 0.2);
+    border-radius: 6px;
+    padding: 10px;
+    top: 19px;
+    transform: translate(5px, -50%);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .container-form {
+    display: flex;
+    width: 100%;
+    gap: 20px;
+  }
+  .container-form form {
+    display: flex;
+    width: calc(50% - 10px);
+
+    textarea {
+      height: 60vh;
+    }
+  }
+}
