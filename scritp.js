@@ -5,6 +5,7 @@ document.getElementById("form").addEventListener("submit", function (event) {
   var outputText = inputText
     .replace(/[\u202F]/g, " ")
     .replace(/[\u2013]/g, "-")
+    .replace(/[^\u0020-\u007E\u00A1-\u00FF\u000D\u000A]/g, "")
     .replace(/[^\d\w\s[À-ü].,]/g, "");
   document.getElementById("outputTextArea").value = outputText;
 
